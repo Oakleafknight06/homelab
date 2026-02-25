@@ -1,0 +1,16 @@
+[Unit]
+Description=Navidrome music server
+
+[Container]
+Image=docker.io/deluan/navidrome:latest
+ContainerName=navidrome
+PublishPort=4533:4533
+Volume=/mnt/bigdrive/music:/music:Z
+Volume=/mnt/bigdrive/navidrome/data:/data:Z
+Pull=newer
+
+[Service]
+Restart=unless-stopped
+
+[Install]
+WantedBy=multi-user.target
