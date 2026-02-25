@@ -1,0 +1,16 @@
+[Unit]
+Description=FreshRSS RSS feed server
+
+[Container]
+Image=docker.io/freshrss/freshrss
+ContainerName=freshrss
+PublishPort=8080:80
+Volume=/var/mnt/bigdrive/freshrss/data:/var/www/FreshRSS/data:Z
+Volume=/var/mnt/bigdrive/freshrss/extensions:/var/www/FreshRSS/extensions:Z
+Environment=CRON_MIN=1,31
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

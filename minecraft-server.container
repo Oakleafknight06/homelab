@@ -1,0 +1,20 @@
+[Unit]
+Description=Minecraft Server
+
+[Container]
+Image=docker.io/itzg/minecraft-server
+ContainerName=mc-server
+Volume=/var/mnt/bigdrive/mc-server:/data:Z
+PublishPort=25565:25565
+Environment="EULA=TRUE"
+Environment="TYPE=FABRIC"
+Environment="VERSION=1.21.10"
+Environment="DIFFICULTY=hard"
+Environment="SPAWN_PROTECTION=0"
+Environment="VIEW_DISTANCE=10"
+Environment="LEVEL=world"
+Environment="ALLOW_FLIGHT=TRUE"
+Environment="SERVER_NAME=A Minecraft Server"
+
+[Service]
+TimeoutStartSec=900

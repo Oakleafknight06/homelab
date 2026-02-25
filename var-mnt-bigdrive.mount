@@ -1,0 +1,9 @@
+[Unit]
+Description=Secondary drive mount
+
+[Mount]
+What=/dev/sda1
+Where=/var/mnt/bigdrive
+
+[Install]
+WantedBy=multi-user.target

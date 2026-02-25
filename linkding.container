@@ -1,0 +1,16 @@
+[Unit]
+Description=Linkding Bookmarks Server
+
+[Container]
+Image=docker.io/sissbruecker/linkding:latest
+ContainerName=linkding
+PublishPort=9090:9090
+Volume=/var/mnt/bigdrive/linkding:/etc/linkding/data:Z
+Environment=LD_FAVICON_PROVIDER=https://icons.duckduckgo.com/ip3/{domain}.ico
+Pull=newer
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=NGINX Proxy Manager
+
+[Container]
+Image=docker.io/jc21/nginx-proxy-manager:latest
+ContainerName=nginxproxymanager
+PublishPort=443:443
+PublishPort=80:80
+PublishPort=81:81
+Volume=/mnt/bigdrive/nginxproxymanager/data:/data:Z
+Volume=/mnt/bigdrive/nginxproxymanager/letsencrypt:/etc/letsencrypt:Z
+
+[Service]
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target default.target

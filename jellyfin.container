@@ -1,0 +1,20 @@
+[Unit]
+Description=Jellyfin Media Server
+After=network.target
+Requires=var-mnt-bigdrive.mount
+
+[Container]
+Image=docker.io/jellyfin/jellyfin
+ContainerName=myjellyfin
+Label=io.containers.autoupdate=registry
+PublishPort=8096:8096
+Volume=/mnt/bigdrive/jellyfin/jellyfin-config:/config:Z
+Volume=/mnt/bigdrive/jellyfin/jellyfin-cache:/cache:Z
+Volume=/mnt/bigdrive/jellyfin/media:/media:ro,Z
+
+[Service]
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target default.target
