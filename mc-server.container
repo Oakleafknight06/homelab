@@ -8,7 +8,7 @@ Volume=/var/mnt/bigdrive/mc-server:/data:Z
 PublishPort=25565:25565
 Environment="EULA=TRUE"
 Environment="TYPE=FABRIC"
-Environment="VERSION=1.21.10"
+Environment="VERSION=1.21.11"
 Environment="DIFFICULTY=hard"
 Environment="SPAWN_PROTECTION=0"
 Environment="VIEW_DISTANCE=10"
@@ -17,4 +17,9 @@ Environment="ALLOW_FLIGHT=TRUE"
 Environment="SERVER_NAME=A Minecraft Server"
 
 [Service]
-TimeoutStartSec=900
+Restart=always
+TimeoutStartSec=1000
+
+[Install]
+WantedBy=multi-user.target
+
