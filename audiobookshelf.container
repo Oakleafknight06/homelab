@@ -1,0 +1,17 @@
+[Unit]
+Description=Audiobookshelf Server
+
+[Container]
+Image=ghcr.io/advplyr/audiobookshelf
+ContainerName=audiobookshelf
+PublishPort=13378:80
+Volume=/var/mnt/bigdrive/audiobookshelf/config:/config:Z
+Volume=/var/mnt/bigdrive/audiobookshelf/metadata:/metadata:Z
+Volume=/var/mnt/bigdrive/audiobookshelf/audiobooks:/audiobooks:Z
+Volume=/var/mnt/bigdrive/audiobookshelf/podcasts:/podcasts:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
