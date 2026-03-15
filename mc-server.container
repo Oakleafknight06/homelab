@@ -11,14 +11,15 @@ Environment="TYPE=FABRIC"
 Environment="VERSION=1.21.11"
 Environment="DIFFICULTY=hard"
 Environment="SPAWN_PROTECTION=0"
-Environment="VIEW_DISTANCE=10"
+Environment="VIEW_DISTANCE=8"
 Environment="LEVEL=world"
-Environment="ALLOW_FLIGHT=TRUE"
 Environment="SERVER_NAME=A Minecraft Server"
+Environment="MOTD=cat"
+Environment="JVM_OPTS=-Xms4G -Xmx6G"
 
 [Service]
 Restart=always
-TimeoutStartSec=1000
+TimeoutSec=300
 
 [Install]
 WantedBy=multi-user.target
