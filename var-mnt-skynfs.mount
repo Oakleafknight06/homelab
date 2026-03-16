@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount NFS share from sky
+Requires=network-online.target
+After=network-online.target
+
+[Mount]
+What=10.3.3.159:/nfsrv/music
+Where=/var/mnt/skynfs
+Type=nfs4
+Options=_netdev
