@@ -1,0 +1,10 @@
+[Unit]
+Description=Run nightly reboot at 4am
+
+[Timer]
+OnCalendar=*-*-* 04:00:00
+Persistent=true
+Unit=reboot-nightly.service
+
+[Install]
+WantedBy=timers.target
