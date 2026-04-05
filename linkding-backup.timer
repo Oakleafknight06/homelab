@@ -2,7 +2,7 @@
 Description=Backup linkding database
 
 [Timer]
-OnCalendar=*-*-* 04:00:00
+OnCalendar=*-*-* 01:00:00
 Persistent=true
 Unit=linkding-backup.service
 
