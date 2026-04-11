@@ -3,4 +3,5 @@ Description=Back up linkding database
 
 [Service]
 Type=oneshot
-ExecStart=podman exec -it linkding python manage.py full_backup /etc/linkding/data/backup.zip && CURRENTDATE=$(date +"%Y-%m-%d_%T") && mv /var/mnt/bigdrive/linkding/backup.zip /var/mnt/bigdrive/backups/${CURRENTDATE}_linkding_backup.zip
+ExecStart=podman exec -it linkding python manage.py full_backup /etc/linkding/data/backup.zip
+ExecStart=mv /var/mnt/bigdrive/linkding/backup.zip /var/mnt/bigdrive/backups/$(date +"%Y-%m-%d_%T")_linkding-backup.zip
