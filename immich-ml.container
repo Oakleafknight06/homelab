@@ -1,0 +1,8 @@
+[Container]
+ContainerName=immich-ml
+Pod=immich.pod
+AutoUpdate=registry
+Image=ghcr.io/immich-app/immich-machine-learning:release
+Environment=MACHINE_LEARNING_CACHE_FOLDER=/cache
+Volume=immich-ml-cache:/cache:z
+User=0:0

@@ -1,0 +1,6 @@
+[Container]
+ContainerName=immich-redis
+Pod=immich.pod
+Image=docker.io/library/redis:7-alpine
+AutoUpdate=registry
+Volume=immich-redis-data:/data:Z

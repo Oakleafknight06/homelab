@@ -1,0 +1,7 @@
+[Container]
+ContainerName=immich-db
+Pod=immich.pod
+AutoUpdate=registry
+Image=ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
+Environment=POSTGRES_DB=immich POSTGRES_USER=immich POSTGRES_PASSWORD=immich_pass
+Volume=/var/lib/immich/db:/var/lib/postgresql/data:Z
