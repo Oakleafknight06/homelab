@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup linkding database
+
+[Timer]
+OnCalendar=*-*-* 01:00:00
+Persistent=true
+Unit=linkding-backup.service
+
+[Install]
+WantedBy=timers.target
