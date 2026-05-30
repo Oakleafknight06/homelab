@@ -4,7 +4,7 @@ Requires=network-online.target
 After=network-online.target
 
 [Mount]
-What=10.3.3.159:/nfsrv/music
+What=10.3.3.159:/nfsrv/tagged-music
 Where=/var/mnt/skynfs
 Type=nfs4
 Options=_netdev
