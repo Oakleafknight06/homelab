@@ -3,6 +3,7 @@ Description=FreshRSS RSS feed server
 
 [Container]
 Image=docker.io/freshrss/freshrss
+AutoUpdate=registry
 ContainerName=freshrss
 PublishPort=8080:80
 Volume=/var/mnt/bigdrive/freshrss/data:/var/www/FreshRSS/data:Z
