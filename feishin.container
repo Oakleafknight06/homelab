@@ -1,0 +1,15 @@
+[Unit]
+Description=Feishin subsonic web client
+
+[Container]
+Image=ghcr.io/jeffvli/feishin:latest
+ContainerName=feishin
+PublishPort=9180:9180
+AutoUpdate=registry
+Pull=newer
+
+[Service]
+Restart=unless-stopped
+
+[Install]
+WantedBy=multi-user.target

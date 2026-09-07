@@ -1,0 +1,18 @@
+[Unit]
+Description=Gonic music server
+
+[Container]
+Image=docker.io/sentriz/gonic:latest
+ContainerName=gonic
+PublishPort=4747:80
+Volume=/mnt/bigdrive/gonic/music:/music:ro,Z
+Volume=/mnt/bigdrive/gonic/data:/data:Z
+Volume=/mnt/bigdrive/gonic/playlists:/playlists:Z
+Pull=newer
+Environment=GONIC_MULTI_VALUE_GENRE=multi GONIC_MULTI_VALUE_ARTIST=multi GONIC_MULTI_VALUE_ALBUM_ARTIST=multi GONIC_MULTI_VALUE_ISRC=multi
+
+[Service]
+Restart=unless-stopped
+
+[Install]
+WantedBy=multi-user.target
