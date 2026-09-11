@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount NFS share from sky for jellyfin
+Requires=network-online.target
+After=network-online.target
+
+[Mount]
+What=10.3.3.120:/srv/highseas
+Where=/var/mnt/highseas
+Type=nfs4
+Options=_netdev
