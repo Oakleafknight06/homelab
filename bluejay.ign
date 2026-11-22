@@ -1,0 +1,55 @@
+{
+  "ignition": {
+    "version": "3.6.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "wheel",
+          "sudo"
+        ],
+        "name": "darin",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICot9MBqD3dhecA7kY9vkQRuLsO3ns7+BnfafmYQxL6I dfagg@dellblue",
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIqSBS1390i4ToE7j2/1LmAsAgFhoSGBYfkOnh1F67pu dfagg@thinkypad"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "group": {
+          "name": "root"
+        },
+        "overwrite": true,
+        "path": "/etc/systemd/logind.conf",
+        "user": {
+          "name": "root"
+        },
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/3SNscrCQBAG+zzFQvo/T/B3BixSBCzF4nL7mRyuu+F2Nfr2YmEj2M4MzHGwueip2SdlwVD4sJXIy3+Z1Sq+cf8IVE0y2ob6o9lZvoA/sqVRUgbFUpxSUIfInT89cOVO3m/+y6bnpqVe0yRwkrSGrSSFKYwmUBZzMCVlUgvym69QJke9ozavAQAPz8c1wgAAAA=="
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/containers/systemd/jellyfin.container",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/4yRz87TMBDE7/sUlriS5OOCIJIP8HEpAlS1AqRGOWyTTbLUf8p63Spvj6Km5QASXDwee35ay9N8DawtfKDUCZ+VY7Afybl54GA+U89o9iQXEng3KIkNpNcop1JRRlLY0c/MQsleUAoftDjy2AtfqPQxBwVonmNQ5EDSwsbjSLaP3Ymk5Fj9WOc8NvAIf0FP1s+Pi094JGc5lt09kUrMGvO5RyUrNHJSmWGbj47TtI2i9s3T29f1ssC36LInW/mg1f2Bf04vuhgGHutq1cN/c9hNVFc3+Rfllz+tV5H48gAvzF+JiccpEaY1+9uv0HP0noJSb2JWg8mEqIb92dHtGKBZmuOOWthRUhS16K44p7vdU2dfPSWAZhOSonMtfMcFfT9bn51ykRPJWrXpacDsdLXwawCzz7f+OAIAAA=="
+        }
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nDescription=Secondary drive mount\n\n[Mount]\nWhat=/dev/sda1\nWhere=/var/mnt/bigdrive\n\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "var-mnt-bigdrive.mount"
+      }
+    ]
+  }
+}

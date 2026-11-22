@@ -1,0 +1,31 @@
+variant: fcos
+version: 1.7.0
+passwd:
+ users:
+  - name: darin 
+    groups:
+      - wheel
+      - sudo
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICot9MBqD3dhecA7kY9vkQRuLsO3ns7+BnfafmYQxL6I dfagg@dellblue
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIqSBS1390i4ToE7j2/1LmAsAgFhoSGBYfkOnh1F67pu dfagg@thinkypad 
+systemd:
+  units:
+    - name: var-mnt-bigdrive.mount
+      enabled: true
+      contents_local: var-mnt-bigdrive.mount
+storage:
+  files:
+    - path: /etc/systemd/logind.conf
+      contents:
+        local: bluejay-logind.conf
+      overwrite: true
+      mode: 0644
+      user:
+        name: root
+      group:
+        name: root
+    - path: /etc/containers/systemd/jellyfin.container
+      contents:
+        local: jellyfin.container
+
