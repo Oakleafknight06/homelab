@@ -8,7 +8,7 @@ Volume=/var/mnt/bigdrive/mc-server:/data:Z
 PublishPort=25565:25565
 Environment="EULA=TRUE"
 Environment="TYPE=FABRIC"
-Environment="VERSION=1.21.11"
+Environment="VERSION=26.2"
 Environment="DIFFICULTY=hard"
 Environment="SPAWN_PROTECTION=0"
 Environment="VIEW_DISTANCE=8"

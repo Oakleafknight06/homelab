@@ -11,6 +11,7 @@ PublishPort=8096:8096
 Volume=/mnt/bigdrive/jellyfin/jellyfin-config:/config:Z
 Volume=/mnt/bigdrive/jellyfin/jellyfin-cache:/cache:Z
 Volume=/mnt/bigdrive/jellyfin/media:/media:ro,Z
+Volume=/mnt/bigdrive/highseas:/media/highseas:ro,Z
 
 [Service]
 Restart=always
